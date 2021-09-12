@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.unity.myunitylib" >
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!--用于写入缓存数据到扩展存储卡-->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <!--<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />-->
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <!--声明后台定位权限-->
+  <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        android:name="com.unity.CustomApplication"
+        android:label="@string/app_name">
+
+        <meta-data
+        android:name="com.amap.api.v2.apikey"
+        android:value="4e26f47f6f1c11060942308050952f8b" />
+      
+        <activity android:name="com.unity.CustomActivity"
+            android:label="@string/app_name"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.lib_name" android:value="unity" />
+            <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
+        </activity>
+
+        <activity android:name="com.unity.myunitylib.mapActivity"></activity>
+    </application>
+</manifest>
